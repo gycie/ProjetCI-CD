@@ -22,19 +22,19 @@
        <version>3.1.0</version>
        <executions>
          <execution>
-           <phase>initialize</phase>
-           <id>enforce-versions</id>
+           <id>enforce-no-snapshots</id>
            <goals>
              <goal>enforce</goal>
            </goals>
            <configuration>
              <rules>
                <requireReleaseDeps>
-                 <message>No Snapshots Allowed for Dependencies!</message>
+                 <message>No Snapshots Allowed!</message>
+                 <excludes>
+                   <exclude>org.apache.maven:maven-core</exclude>
+                   <exclude>org.apache.maven.plugins:*</exclude>
+                 </excludes>
                </requireReleaseDeps>
-               <requireReleaseVersion>
-                 <message>Snapshot Version is Not Allowed for Release</message>
-               </requireReleaseVersion>
              </rules>
              <fail>true</fail>
            </configuration>
