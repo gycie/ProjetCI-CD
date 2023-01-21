@@ -12,31 +12,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-enforcer-plugin</artifactId>
-    <version>3.1.0</version>
-    <executions>
-      <execution>
-        <phase>initialize</phase>
-        <id>enforce-versions</id>
-        <goals>
-          <goal>enforce</goal>
-        </goals>
-        <configuration>
-          <rules>
-            <requireReleaseDeps>
-              <message>No Snapshots Allowed for Dependencies!</message>
-            </requireReleaseDeps>
-            <requireReleaseVersion>
-              <message>Snapshot Version is Not Allowed for Release</message>
-            </requireReleaseVersion>
-          </rules>
-          <fail>true</fail>
-        </configuration>
-      </execution>
-    </executions>
-    
-  </plugin>
 </project>
